@@ -17,7 +17,6 @@
    .read-btn {
       background-color: #7a1655;
       color: white;
-      margin-top: 20px;
       font-size: 18px;
       padding: 13px 19px;
       border: 0;
@@ -28,22 +27,23 @@
    /*|| Cards Style */
    .place-slogan{
      font-weight: 100;
-     font-size: 33px;
-     margin-top: 15px;
-     margin-bottom: 5px;
+     font-size: 37px;
+     margin-top: 5%;
+     padding-right:30px ;
    }
    .place-name{
-     font-weight: bold;
-     margin-top: 2%;
+     font-weight: 700;
      font-size: 20px;
-     margin-bottom: 30px;
+     padding-top: 10px;
+     padding-bottom: 27px;
+    
    }
    .place-description{
      
      font-weight: 300;
-     margin-bottom: 2px;
      font-size: 20px;
      line-height: 18pt;
+     padding-bottom: 20px;
    }
    
    .main-div-p1{

@@ -12,7 +12,7 @@ function App() {
     <Routes>
        <Route path='/' element={<TemplatePage/>}>
         <Route index element={<Homepage/>}></Route>
-        <Route exact path='/detailspage/*' element={<DetailsPage/>}></Route>
+        <Route exact path='/detailspage/:userId' element={<DetailsPage/>}></Route>
        </Route>
     </Routes>
     </BrowserRouter> 

@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import peStyle from "./promoandexplore.module.css";
 import { useNavigate } from "react-router-dom";
+import {getCities} from "../../services/apiServices";
 import Cover from "../../assets/images/cover.webp"
 function PromoAndExplore() {
+
   const navigate = useNavigate();
+  const [options,setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
 
+  useEffect(() => {
+    const fetch  = async() =>{
+      let cities = await getCities();
+      if(cities.join("") !== options.join("")) 
+       setOptions(cities); 
+    }
+    fetch();
+ }, [options]);
+
   const handleFormClick = () => {
-    console.log("handleFormClick");
-    console.log(selectedOption, "State CLICKED METHOD");
+
     if(selectedOption!==""){
       navigate(`/detailspage/${selectedOption}`);
     }
   };
+
+  console.log("promo")
 
   return (
     <>
@@ -20,7 +33,7 @@ function PromoAndExplore() {
         <div className={peStyle["promo-content"]}>
           <p className={peStyle["promo-content-text1"]}>WELCOME TO EXPLORER</p>
           <p className={peStyle["promo-content-text2"]}>
-            YOUR ADVENTURE TRAVEL EXPERT IN THE{" "}
+            Your Adventure Travel Expert in the{" "}
             <span className={peStyle["south"]}>SOUTH</span>
           </p>
           <div className={peStyle["explore-form"]}>
@@ -31,12 +44,11 @@ function PromoAndExplore() {
               onChange={(e) => setSelectedOption(e.target.value)}
             >
               <option value="">Choose</option>
-              <option value="Pollachi">Pollachi</option>
-              <option value="Thanjavur">Thanjavur</option>
-              <option value="Chidambaram">Chidambaram</option>
-              <option value="Masinagudi">Masinagudi</option>
-              <option value="Kumbakonam">Kumbakonam</option>
-              <option value="Tirunelveli">Tirunelveli</option>
+              {options.map((v, i) => {
+                   return (
+                  <option value={v}>{v}</option>
+              );
+            })}
             </select>
           </div>
           <button
@@ -44,8 +56,7 @@ function PromoAndExplore() {
             onClick={handleFormClick}
             className={peStyle["explore-form-button"]}
           >
-            {" "}
-            Explore{" "}
+            EXPLORE
           </button>
         </div>
 
@@ -57,12 +68,3 @@ function PromoAndExplore() {
   );
 }
 export default PromoAndExplore;
-
-// const languageList = [
-//   { value: 1, label: "Pollachi" },
-//   { value: 2, label: "Thanjavur" },
-//   { value: 3, label: "Chidambaram" },
-//   { value: 4, label: "Masinagudi" },
-//   { value: 4, label: "Kumbakonam" },
-//   { value: 6, label: "Tirunelveli" },
-// ];

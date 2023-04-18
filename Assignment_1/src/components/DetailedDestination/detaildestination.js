@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import destinationStyle from "../Destination/destination.module.css";
 import DetailsPageStyle from "./detaildestination.module.css";
 import Card from "../Card/card"
-import { useNavigate } from "react-router-dom";
+import fetchData,{weatherData,fullDescriptionData} from "../../services/apiServices";
+import { useParams } from "react-router-dom";
 
-import axios from 'axios';
 
 function DetailsDestinationPage() {
   return (
@@ -17,36 +17,28 @@ function DetailsDestinationPage() {
 export default DetailsDestinationPage;
 
 function DetailSection() {
-  const placeName = window.location.pathname.replace("/detailspage/","").toLowerCase();
-  const apiUrl = `https://nijin-server.vercel.app/api/explorer/places/${placeName}`;
+
+  const  placeName  = useParams().userId;
+  const apiUrl = `/places/${placeName}`;
   const [completeDetail, setCompleteDetail] = useState({});
   const[fullDescription,setFullDescription] = useState("");
-  const[wheather,setWheather] = useState("");
+  const[weather,setWeather] = useState("");
   
   useEffect(() => {
-
-    fetch(apiUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setCompleteDetail(data);
-       
-        setFullDescription(data.fullDescription.split("\\n").map((el,index)=><p key={index} className={DetailsPageStyle["place-fulldetail-description"]}>{el}</p>));
-      });
-      
-      axios.get(`http://api.weatherapi.com/v1/forecast.json?key=db224014a65b48d987f181930231404&q=${placeName}&days=1&aqi=no&alerts=yes`)
-    .then(function (response) {
-      console.log(response.data.current.temp_c);
-      setWheather(response.data.current.temp_c+" ℃")
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  }, []);
+     const fetch  = async() =>{
+      let completeDetails = await fetchData(apiUrl); 
+      console.log(completeDetails);
+      if(completeDetails !== completeDetail) {
+        setCompleteDetail(completeDetails);
+        setFullDescription(await fullDescriptionData(apiUrl))
+        setWeather(await weatherData(placeName));
+      }
+     }
+     fetch();
+  },[placeName]);
   
 
+  console.log("destination");
   return (
     <>
     {
@@ -60,7 +52,7 @@ function DetailSection() {
             {completeDetail.place}
           </div>
           <p className={DetailsPageStyle["promo-content-place-temperature"]}>
-            {wheather}
+            {weather}
           </p>
         </div>
 
@@ -70,7 +62,7 @@ function DetailSection() {
       </section>
       }
       <section>
-        <div className={DetailsPageStyle["place-fulldetail-container"]} style={{"white-space":"pre-wrap"}}>
+        <div className={DetailsPageStyle["place-fulldetail-container"]}>
           {fullDescription}
         </div>
       </section>
@@ -92,7 +84,6 @@ function SimilarDestinations() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         if (places.join("") !== data.join("")) setPlaces(data);
       });
   }, [places]);

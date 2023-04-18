@@ -1,7 +1,8 @@
 import { useState,useEffect} from "react";
 import destinationStyle from "./destination.module.css";
-import { useNavigate } from "react-router-dom";
 import Card from "../Card/card";
+import touristPlaces from '../../data/explorer.json';
+import fetchData from "../../services/apiServices";
 function Destinations() {
   return (
     <>
@@ -26,31 +27,47 @@ function Destinations() {
 }
 export default Destinations;
 
+
+// function Cards (){
+
+//     const[places,setPlaces] = useState([]);
+
+//  useEffect(()=>{
+//     const fetch  = async() =>{
+//       let data = await fetchData();
+//       if(places.join("") !== data.join(""))
+//         setPlaces(data)
+//     }
+//     fetch();
+// },[places])
+
+//     return(
+//       <>
+//       <section className={destinationStyle["cards-container"]}>
+//             {places.map((v, i) => {
+//               return (
+//                <Card value={v} key={i} />
+//               );
+//             })}
+//       </section>
+//       </>
+//     )
+//   }
+
+
 function Cards (){
 
-    const[places,setPlaces] = useState([]);
-    const navigate = useNavigate();
+  return(
+    <>
+    <section className={destinationStyle["cards-container"]}>
+          {touristPlaces.map((v, i) => {
+            return (
+             <Card value={v} key={i}/>
+            );
+          })}
+    </section>
+    </>
+  )
+}
 
-    useEffect(() => {
-      fetch("https://nijin-server.vercel.app/api/explorer")
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        if(places.join("") !== data.join(""))
-          setPlaces(data)
-      });
-    },[places]);
-  
-    return(
-      <>
-      <section className={destinationStyle["cards-container"]}>
-            {places.map((v, i) => {
-              return (
-               <Card value={v} key={i}/>
-              );
-            })}
-      </section>
-      </>
-    )
-  }
+

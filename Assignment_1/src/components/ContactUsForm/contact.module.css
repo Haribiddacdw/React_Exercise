@@ -1,6 +1,6 @@
 .contact-form-section{
     background-color: #F7F7F7;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 5% 9%;
 }
 .contact-form-container{
@@ -14,7 +14,7 @@
 .contact-head{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 7px;
 }
 .contact-intro{
     color: #7A1655;
@@ -23,16 +23,17 @@
 }
 .contact-intro-slogan{
     color: #964979;
-   font-size: 25px;
+   font-size: 23px;
 }
 .label{
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 500;
 }
 .input-box{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-top: 10px;
 }
 .explore-form-select{
     height: 76px;
