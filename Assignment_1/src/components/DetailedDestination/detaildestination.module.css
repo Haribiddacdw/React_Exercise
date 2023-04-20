@@ -1,0 +1,52 @@
+.promo-section{
+    display: flex;
+    flex-direction: row;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.promo-content{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 215px 31px 70px 115px;
+}
+.promo-content-placename{
+    font-size: 90px;
+    margin-bottom: 20px;
+    color: #7A1655;
+}
+.promo-content-place-slogan{
+    
+    width: 192%;
+    top: 32%;
+    font-size: 60px;
+    background-color: #7A1655;
+    color: #fff;
+    font-weight: bold;
+    padding: 80px;
+    z-index: 1;
+}
+.promo-content-place-temperature{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 8%;
+    font-weight: 400;
+}
+.cover{
+    width: 60%;
+}
+.cover img{
+    width: 100%;
+}
+.place-fulldetail-container{
+    width: 87%;
+    margin: auto;
+    margin-top: 5%;
+}
+.place-fulldetail-description{
+    font-family: 'IBM Plex Sans', sans-serif;
+   font-size: 35px;
+   margin-bottom: 2%;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.5;
+}

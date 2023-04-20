@@ -1,0 +1,82 @@
+.contact-form-section{
+    background-color: #F7F7F7;
+    margin-top: 2%;
+    padding: 5% 9%;
+}
+.contact-form-container{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+}
+.contact-head{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.contact-intro{
+    color: #7A1655;
+    font-size: 49px;
+    font-weight: 500;
+}
+.contact-intro-slogan{
+    color: #964979;
+   font-size: 23px;
+}
+.label{
+    font-size: 22px;
+    font-weight: 500;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+.explore-form-select{
+    height: 76px;
+    padding: 3%;
+    font-size: 17px;
+    color: rgb(156,156,156);
+}
+.contact-form-button{
+    width: 37%;
+    font-size: 18px;
+    padding: 15px;
+    color: #fff;
+    background-color: #7A1655;
+    border-style: none;
+    cursor: pointer;
+}
+.choose-icon{
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat, repeat;
+  background-position: right 20px top 50%, 0 0;
+  background-size: 30px;
+  cursor: pointer;
+  padding-left: 37px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.input-box-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-message{
+    background-color: #7A1655;
+    color: #fff;
+    padding: 25px;
+    font-size: 20px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

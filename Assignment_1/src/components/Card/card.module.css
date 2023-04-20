@@ -1,0 +1,66 @@
+
+     .column{
+     width: 32%;
+     margin-bottom: 3%;
+     display: inline-block;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+   }
+   .row2{
+     margin-top: 56px;
+     margin-bottom: 100px;
+   }
+   img {
+     width: 100%;
+   }
+   .read-btn {
+      background-color: #7a1655;
+      color: white;
+      font-size: 18px;
+      padding: 13px 19px;
+      border: 0;
+      cursor: pointer;
+      width: 150px;
+   }
+   
+   /*|| Cards Style */
+   .place-slogan{
+     font-weight: 100;
+     font-size: 37px;
+     margin-top: 5%;
+     padding-right:30px ;
+   }
+   .place-name{
+     font-weight: 700;
+     font-size: 20px;
+     padding-top: 10px;
+     padding-bottom: 27px;
+    
+   }
+   .place-description{
+     
+     font-weight: 300;
+     font-size: 20px;
+     line-height: 18pt;
+     padding-bottom: 20px;
+   }
+   
+   .main-div-p1{
+     text-align: center;
+     color: #7a1655;
+     font-size: 70px;
+     font-weight: 300;
+     margin: 0%;
+   
+   }
+   .para-1 {
+     text-align: justify;
+     margin-left: 13%;
+     margin-right: 13%;
+     margin-bottom: 6%;
+     line-height: 30pt;
+     font-size: 28px;
+     font-weight: 200;
+   }
+   
