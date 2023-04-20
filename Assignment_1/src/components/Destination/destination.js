@@ -3,7 +3,9 @@ import destinationStyle from "./destination.module.css";
 import Card from "../Card/card";
 import touristPlaces from '../../data/explorer.json';
 import fetchData from "../../services/apiServices";
+
 function Destinations() {
+      
   return (
     <>
       <section className={destinationStyle["destination-section"]}>
@@ -13,7 +15,7 @@ function Destinations() {
             <h2 className={destinationStyle["destination-intro"]}>Destinations</h2>
             <p className={destinationStyle["destination-intro-slogan"]}>Just For You.Because you and your bike are special to us!</p>
           </div>
-          
+    
           <section className={destinationStyle["cards-section"]}>
           <div id={destinationStyle["main-div"]}>
             <Cards/>
@@ -26,6 +28,29 @@ function Destinations() {
   );
 }
 export default Destinations;
+
+
+function Cards(){
+  return(
+    <>
+    <section className={destinationStyle["cards-container"]}>
+          {touristPlaces.map((v, i) => {
+            return (
+             <Card value={v} key={i}/>
+            );
+          })}
+    </section>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
 
 
 // function Cards (){
@@ -55,19 +80,6 @@ export default Destinations;
 //   }
 
 
-function Cards (){
 
-  return(
-    <>
-    <section className={destinationStyle["cards-container"]}>
-          {touristPlaces.map((v, i) => {
-            return (
-             <Card value={v} key={i}/>
-            );
-          })}
-    </section>
-    </>
-  )
-}
 
 

@@ -1,12 +1,13 @@
 
 .destination-section{
     margin-top: 5%;
-  
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 .destination-container{
     width: 87%;
     margin: auto;
     margin-top: 5%;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 .destination-head{
      display: flex;
@@ -70,12 +71,14 @@
    font-size: 33px;
    margin-top: 15px;
    margin-bottom: 5px;
+   
  }
  .place-name{
    font-weight: bold;
    margin-top: 2%;
    font-size: 20px;
    margin-bottom: 30px;
+   
  }
  .place-description{
    

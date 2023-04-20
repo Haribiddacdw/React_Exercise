@@ -1,6 +1,7 @@
 import cardStyle from '../Card/card.module.css';
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import Button from '../Button/button';
 
 function Card(props){
 
@@ -21,7 +22,8 @@ function Card(props){
                     {props.value.shortDescription}
                     </p>
                     </div> 
-                    <button className={cardStyle[`read-btn`]} onClick={()=>handleCardClick(props.value.city)}>READ MORE</button>
+                    <Button onChangeName={()=>handleCardClick(props.value.city)} text="READ MORE"/>
+                    {/* <button className={cardStyle[`read-btn`]} onClick={()=>handleCardClick(props.value.city)}>READ MORE</button> */}
                   </div>
     )
 }

@@ -2,7 +2,8 @@ import { useState,useEffect } from "react";
 import peStyle from "./promoandexplore.module.css";
 import { useNavigate } from "react-router-dom";
 import {getCities} from "../../services/apiServices";
-import Cover from "../../assets/images/cover.webp"
+import Cover from "../../assets/images/cover.webp";
+import Button from "../Button/button";
 function PromoAndExplore() {
 
   const navigate = useNavigate();
@@ -51,13 +52,15 @@ function PromoAndExplore() {
             })}
             </select>
           </div>
-          <button
+          <Button onChangeName={handleFormClick} text="EXPLORE"/>
+
+          {/* <button
             type="button"
             onClick={handleFormClick}
             className={peStyle["explore-form-button"]}
           >
             EXPLORE
-          </button>
+          </button> */}
         </div>
 
         <div className={peStyle["cover"]}>
